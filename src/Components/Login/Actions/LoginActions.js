@@ -1,10 +1,36 @@
 const loginActions = {
-  setUserDetails: "SET_USER_DETAILS"
+  userLoginInitiated: "userLoginInitiated",
+  userLoginSuccess: "userLoginSuccess",
+  userLoginFailuer: "userLoginFailed",
+  resetToInitialState: "resetToInitialState"
 };
 
-export const setUserDetails = param => {
+export const userLoginInitiated = param => {
   return {
-    type: loginActions.setUserDetails,
+    type: loginActions.userLoginInitiated,
+    payload: param
+  };
+};
+
+export const userLoginSuccess = param => {
+  console.log("param: ", param);
+  return {
+    type: loginActions.userLoginSuccess,
+    payload: param
+  };
+};
+
+export const userLoginFailuer = param => {
+  console.log("param: ", param);
+  return {
+    type: loginActions.userLoginFailuer,
+    payload: param
+  };
+};
+
+export const resetToInitialState = param => {
+  return {
+    type: loginActions.resetToInitialState,
     payload: param
   };
 };
